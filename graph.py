@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from estimate_price import linear_function
 from load import load
 
 def main():
@@ -13,14 +12,14 @@ def main():
         mileages = file[1:, 0].tolist()
         prices = file[1:, 1].tolist()
 
-        a, b = linear_function(mileages, prices)
-        y = [e for e in range(20000, 200000, 10000)]
-        x = [a * e + b for e in y]
-        plt.plot(x, y)
+        #a, b = linear_function(mileages, prices)
+        #x = [e for e in range(20000, 200000, 10000)]
+        #y = [a * e + b for e in x]
+        #plt.plot(x, y)
 
-        plt.xlabel("mileages")
         plt.ylabel("prices")
-        plt.scatter(prices, mileages)
+        plt.xlabel("mileages")
+        plt.scatter(mileages, prices)
         plt.title("France Life expectancy Projections")
         plt.show()
     except Exception as msg:
