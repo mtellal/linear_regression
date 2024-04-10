@@ -125,7 +125,7 @@ class LinearRegression:
             if costs: self.costs.append(self.calcosts(Y_predict))
             if display: self.displayTrain(rplt, tmp_t0, tmp_t1)    
 
-
+    """
     def tests(self):
         t0 = self.t0
         t1 = self.t1
@@ -136,4 +136,4 @@ class LinearRegression:
         _Y.sort()
         for i in range(0, len(_X)):
             print(f'{self.denormalize(_X[i]):<20} | {int(self.denormalize(t0 + t1 * _X[i], "Y")):<12} | {self.denormalize(_Y[i], "Y"):<20}')
-
+    """
