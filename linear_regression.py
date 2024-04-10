@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from utils import display_scatter, display_scatter_ax, display_scatter_plot
+from utils import display_scatter, display_plot, display_scatter_ax, display_scatter_plot
 
 # regression lineaire
 # definition du modele soit ax + b
@@ -34,8 +34,8 @@ class LinearRegression:
     def display_costs(self):
         if len(self.costs) == 0:
             return
-        display_scatter(np.arange(len(self.costs)), self.costs, 
-        title="Costs", xlabel="thta/params", ylabel="errors")
+        display_plot(np.arange(len(self.costs)), self.costs, 
+        title="Costs", xlabel="iterations theta/params", ylabel="value mse errors")
 
 
     def display_raw(self, norm=False):
@@ -124,6 +124,7 @@ class LinearRegression:
             self.t1 = tmp_t1
             if costs: self.costs.append(self.calcosts(Y_predict))
             if display: self.displayTrain(rplt, tmp_t0, tmp_t1)    
+        print("")
 
     """
     def tests(self):

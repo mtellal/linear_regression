@@ -8,6 +8,13 @@ def display_scatter(X, Y, title="Datas", xlabel="mileages", ylabel="prices"):
     plt.scatter(X, Y)
     return rplt
 
+def display_plot(X, Y, title="Datas", xlabel="mileages", ylabel="prices"):
+    rplt = plt.figure(title)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.plot(X, Y)
+    return rplt
+
 def display_scatter_ax(scatter, ax, title="Datas", xlabel="mileages", ylabel="prices"):
     rplt = plt.figure(title)
     plt.xlabel(xlabel)
