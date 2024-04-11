@@ -34,7 +34,7 @@ def main():
             return
         X, Y = verify_file(file)
         l = LinearRegression(X, Y)
-        print("Commands:\n- \"train\": train the model\n- \"estimate\": estimate a price from a mileage (int)\n- \"show raw\": show raw datas\n- \"show costs\": show costs plot\n- \"show final\": show final graphs\n")
+        print("Commands:\n- \"train\": train the model\n- \"train +\": train and animate\n- \"estimate\": estimate a price from a mileage (int)\n- \"show raw\": show raw datas\n- \"show costs\": show costs plot\n- \"show final\": show final graphs\n")
         while True:
             inp = input("waiting a command: ")
             if inp == "estimate":

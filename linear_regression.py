@@ -106,9 +106,9 @@ class LinearRegression:
 
 
     def train(self, display=False, costs=False):
-        if self.trained:
-            return 
         self.trained = True
+        self.t0 = 0
+        self.t1 = 0
         tmp_t0 = self.t0
         tmp_t1 = self.t1
         if display:
@@ -123,8 +123,18 @@ class LinearRegression:
             self.t0 = tmp_t0
             self.t1 = tmp_t1
             if costs: self.costs.append(self.calcosts(Y_predict))
-            if display: self.displayTrain(rplt, tmp_t0, tmp_t1)    
+            if display and i % 5 == 0: self.displayTrain(rplt, tmp_t0, tmp_t1)    
         print("")
+        print("precision (R2, coef determination):", self.precision())
+
+    def precision(self):
+        # all normalized
+        Y_pred = self.t0 + self.t1 * self.X
+        Y_mean = np.mean(self.Y)
+        sced = sum([(self.Y[i] - Y_pred[i]) ** 2 for i in range(len(self.Y))])
+        scem = sum([(Yi - Y_mean) ** 2 for Yi in self.Y])
+        return 1 - sced / scem
+
 
     """
     def tests(self):
