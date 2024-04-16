@@ -9,6 +9,7 @@ using a linear function train with a gradient descent algorithm.
 ### Documentation
 
 #### Linear regression and Gradient descent
+- Comprendre la descente de gradient en 3 étapes et 12 dessins - https://www.charlesbordet.com/fr/gradient-descent/#
 - Introduction à la régression linéaire (moindres carres + coefficient de correlation) -
 https://www.youtube.com/watch?v=_b_50uILuok&t=493s
 - Linear Regression Gradient Descent | Machine Learning | Explained Simply - https://www.youtube.com/watch?v=EfsjEOb596Q&t=137s
